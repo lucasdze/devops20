@@ -51,6 +51,11 @@ Jenkins is a self-contained Java-based program, ready to run out-of-the-box, wit
    # Setup Jenkins to start at boot,
    chkconfig jenkins on
    ```
+# configure the port 8080 on the firewall for jenkins server
+   firewall-cmd --zone=public --add-port=8080/tcp --permanent
+   firewall-cmd --zone=public --add-service=http --permanent
+   firewall-cmd --reload
+
 
    ### Accessing Jenkins
    By default jenkins runs at port `8080`, You can access jenkins at
